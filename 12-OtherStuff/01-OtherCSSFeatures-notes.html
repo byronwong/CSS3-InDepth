@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Other CSS Features Notes</title>
+</head>
+<body>
+
+	<!-- 
+
+		Other features
+		==============
+		Most of these features are around the corner or poorly implemented
+
+		CSS Exclusions
+		CSS Regions
+		CSS3 Multi-coloumn Layout
+		CSS3 Flexibox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+		CSS3 Grid layout
+		CSS Device Adaptation
+
+
+		CSS columns
+		===========
+		column-count: 2; (maximum col count)
+		column-width: 10ems; (min width)
+		column-rule: 1px solid #333;
+		column-gap : 0.8ems
+
+		// NOTE: best to use margin bottom to space out text
+
+
+		Box-sizing 
+		==========
+		box-sizing: content-box | border-box
+
+
+		CSS Regions
+		===========
+		Allows text to flow from one box to another like inDesign text boxes
+
+		<div id="origin">[content here]</div>
+		<div class="destination"></div>
+		<div class="destination"></div>
+		<div class="destination"></div>
+
+		#origin {
+			-webkit-flow-into: name-of-my-flow;
+			/*other css styles*/
+		}
+		
+		.desitination {
+			-webkit-flow-from: name-of-my-flow;
+			/*Sytle overflow boxes*/
+		}
+
+
+		CSS Exclusions
+		==============
+
+		Only in IE 10 prefixed
+		Allows you to have a space in the middle of the page and content will flow around it.
+
+
+		Flex Box
+		========
+		Used to position horizonal and vertical stacks.
+
+		.box {
+			display: box;
+			box-orient: horrizontal | vertical; // changes the way the boxes are stacked
+		}
+
+
+		Grid layout
+		===========
+
+		display: grid | inline-grid
+
+		grid-column
+		grid-rows
+		grid-cell
+		grid-cell-stacking
+		grid-template
+		grid-column-span
+		grid-row-span
+		grid-column-sizing
+		grid-row-sizing
+		grid-flow
+		grid-column-align
+		grid-row-align
+		grid-layer
+
+
+		CSS Shaders
+		===========
+		css filters
+		http://html5-demos.appspot.com/static/css/filters/index.html
+
+
+		CSS Shadow DOM
+		==============
+		As discussed
+
+
+		CSS Cursors
+		===========
+		New cursors available
+		http://www.sitepoint.com/css3-cursor-styles/
+
+
+		Ellipsis
+		========	
+		p {
+			text-overflow:ellipsis;
+			white-space:nowrap;
+			overflow:hidden;
+		}
+
+		
+		Breakword
+		=========
+		word-wrap: normal | break-word
+
+
+		calc()
+		=====
+		allows css to do calculations
+
+		.colA {
+			width: -moz-calc(50% - 1em);
+		}
+
+
+		REMS
+		====
+		:root {
+			font-size: 62.5%; // to use the measurements bollow you need to set 62.5% and root level
+		}
+
+		p {
+			font-size:13px;
+			font-size:1.3rem;
+		}
+
+		small {
+			font-size:11px;
+			font-size:1.1rem;
+		}
+
+		Pointer Events
+		==============
+
+		.element {
+			pointer-events: none; // this element cannot recieve a click event
+		}
+
+
+		-webkit-user-modify
+		===================
+
+		related to content editable:
+
+		read-only - content is read only
+
+		read-write - content can be read or written
+
+		write-only(moz only) the user is able to edit the content but can't read it 
+
+		read-write-plaintext-only (webkit) - the content can be written, but and rich formatting of the pasted text is lost.
+
+
+
+		http://estelle.github.io/
+
+
+	-->
+
+</body>
+</html>

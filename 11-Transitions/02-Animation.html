@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation Notes</title>
+</head>
+<body>
+
+	<!-- 
+
+	Animation Essentials 
+	====================
+	@keyframes
+	animation-name
+	animation-duration
+	animation-timing-function
+	animation-iteration-count
+	animation-direction
+	animation-play-state
+	animation-delay
+	animation-fill-mode
+	animation (shorthand)
+
+
+	@keyframes
+	==========
+
+	// 	Example Keyframe
+	// 	Its best to use % where 0 is the start and 100% is the end, so this is a % of time, 
+		we will set the duration later. This is a good way to work as you can attach the animation to multiple items and then set the durations differently for each item.
+
+	@keyframes frameName {
+		from {
+			left:0;
+		}
+		to {
+			left 100%;
+		}
+	}
+
+	// Granular Control
+	@keyframes example2 {
+		0% {
+			left:0;
+		}
+		10% {
+			left:45%;
+		}
+		90%{
+			left 55%; // NOTE: the animation moves slow at this period
+		}
+		100% {
+			left:100%;
+		}
+	}
+
+	// Animating Multiple Properties
+	// 	NOTE: the left property, althought not declare in some parts, get divided equally throughout	the animation.
+
+	@keyframes example3 {
+		0% {
+			left:0;
+			top:0;
+		}
+		10% {
+			top:400px
+		}
+		90%{
+			top 50px; 
+		}
+		100% {
+			left:80%;
+			top:0;
+		}
+	}
+
+	// You can also use transforms
+	
+	// So far we have created animations but we have not attached it to anything
+	
+	/*Base CSS*/
+	.pencil {
+		width:100%;
+		text-align: rigth;
+		border-bottom: 10px solid;
+	}
+
+	@keyframes drawline {
+		0%{
+			width:0;
+		}
+		100% {
+			width:100%;
+		}
+	}
+
+	.pencil { /*these are the only to properties we need to set to bind an animation*/
+		animation-name: drawline;
+		animation-duration: 3s;
+	}
+
+
+	Animation timing function
+	=========================
+
+	the default function is 'ease'
+
+	ease
+	ease-in
+	ease-out
+	ease-in-out
+	step-start
+	step-end
+	steps(X, start|end) - used to make animations with png sprites
+	linear
+	cubic-bezier(x1, y1 , x2, y2) http://cubic-bezier.com/#.17,.67,.83,.67
+
+
+	Iteration count
+	===============
+
+	animation-iteration-count: 1 // Default
+	animation-iteration-count: x
+	animation-iteration-count: infinite
+
+
+	Animation Delay
+	===============
+
+	animation-duration:8s;
+	animation-delay: -4.0s; // Here the animation will start harf way (back in time)
+
+	Animation Direction
+	===================
+
+	Default is 'normal' means the animation goes in one direction
+	'alternate' mean the animation forwards and then reverses.
+	-->
+
+</body>
+</html>

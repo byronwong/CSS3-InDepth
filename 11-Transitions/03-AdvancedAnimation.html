@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation Notes</title>
+</head>
+<body>
+
+	<!-- 
+
+	Animation Shorthand 
+	===================
+
+	// long hand 
+
+	.pencil {
+		animation-name: drawline;
+		animation-duration:5s;
+		animation-delay: 100ms;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count:5;
+	}
+
+	// short hand 
+	animation: drawline 5s ease-in-out 100ms 5;
+
+	// NOTE: duration must always come before delay
+
+
+	Animation Fill mode
+	===================
+
+	animation-fill-mode: none | forwards | backwards | both
+
+	default: none
+	forwards - stay on frame 100% forever / until the animation is removed from the element
+	backwards - will apply the properties of the starting keyframe or end of delay: 
+	both - will take on properties of at the start and take on end properties at the end
+
+
+	Animation play state
+	====================
+
+	animation-play-state: paused | running // can pause the animation
+
+
+	What happens when an animation ends
+	===================================
+
+	events are fired:
+	animationstart
+	animationend
+	animationiteration
+
+	el.addEventLisener('webkitAnimationEnd', function(){
+		function(event){
+			console.log('animation ended');
+		}
+	}, flase);
+
+
+
+	-->
+
+</body>
+</html>

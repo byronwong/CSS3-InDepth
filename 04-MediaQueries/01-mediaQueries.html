@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media Queries</title>
+
+	<!-- Ways of doing media queries (external style sheets) -->
+	<link rel="stylesheet" media="screen" href="ccs/styles.css">
+	<link rel="stylesheet" media="print" href="ccs/styles.css">
+
+</head>
+<body>
+	<!-- Media query way -->
+	<style>
+		@media screen {
+
+		}
+
+		@media print {
+
+			/* 
+				When setting up a print view it's good practice to remove the header and footer
+				also you can add/display urls in links using after check out:
+				
+				https://css-tricks.com/pseudo-element-roundup/
+					
+				Code bellow:;
+				
+				@media print {
+				  a[href]:after {
+				    content: " (" attr(href) ") ";
+				  }
+				}
+
+			*/
+
+
+		}
+
+		/* 
+
+			10 media queries
+			=================
+			all
+			aural
+			handheld
+			braille
+			embossed
+			print
+			projection
+			screen
+			tty
+			tv
+
+
+			in most cases this is what you will really care about */
+		</style>
+
+		<link rel='stylesheet' media="screen and (min-width:320px) and (max-width:480px)" 
+			href='css/smartphone.css'>
+
+		<style>
+
+			@media screen and (max-width: 480px) {
+				a {
+					transition: background-color 200ms linear 50ms;
+				}
+			}
+
+			@media screen and (orientation: landscape){
+				a[href^=mailto:]:before {
+					content: url(icons/email.png);
+				}
+			}
+
+			/*
+				(min/max)-width:viewport width
+				(min/max)-height: viewport height
+				(min/max)-device-width: screen width
+				(min/max)-device-height: screen height
+				orientation: portrait(h>w) | landscape(w>h)
+				(min/max)-aspect-ratio: width/height
+				(min/max)-device-aspect-ratio: device-width/height
+
+				media query syntax
+				============================
+				only 
+				and
+				not 
+				, - allow you to list differnt media types
+
+				@supports - comming soon
+
+				MS surface viewport fix
+				============================
+				@media screen and (min-width:320px) and (max-width:500px) {
+					@-ms-viewport {width: device-width;}
+				}
+
+
+				why is this?
+				viewport is comming to css so instead of doing this in html:
+				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+				we will be using:
+				@viewport {
+					width: device-width;
+					zoom:0.5;
+				} 
+
+				the only browser to support this is IE10.
+			*/
+
+		</style>
+
+
+</body>
+</html>

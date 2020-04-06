@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gradients Notes</title>
+</head>
+<body>
+
+	<!-- 
+		We can use gradients anywhere an image is used (theoretically)
+			
+		There are 4 types of gradients:
+
+		linear-gradients()
+		radial-gradients()
+		repeating-linear-gradient()
+		repeating-radial-gradient()
+
+		for old gradient you will need to use webkit to support it.
+
+		NOTE: beware of using transparent as it will be transparent grey
+
+		NOTE: prefix and non prefix angles are differnt
+
+		{background-image:
+
+			-mox-liner-gradient ( to bottom left // 'to' makes it exactly to the corners
+
+				rgba(255,255,255,1) 25%,
+				rgba(255,255,255,1) 100%;
+
+				backround-color: indianred;
+			)
+
+
+		}
+
+		NOTE: 45 deg is different to corner to corner (bottom left)
+
+
+
+	-->
+
+	<style>
+	body {
+
+		background: -webkit-linear-gradient(			
+			red 20%,
+			orange 40%
+			yellow 60%
+			green 80%
+			blue 100%); 
+		/* For Safari 5.1 to 6.0 */
+
+	    background: -o-linear-gradient(			
+	    	red 20%,
+			orange 40%
+			yellow 60%
+			green 80%
+			blue 100%); 
+	    /* For Opera 11.1 to 12.0 */
+	    
+	    background: -moz-linear-gradient(			
+	    	red 20%,
+			orange 40%
+			yellow 60%
+			green 80%
+			blue 100%); 
+	    /* For Firefox 3.6 to 15 */
+	    
+	    background: linear-gradient(			
+	    	red 20%,
+			orange 40%
+			yellow 60%
+			green 80%
+			blue 100%); 
+
+	    /* Standard syntax (must be last) */
+		/*-	background-image: linear-gradient (
+			top,
+			red 20%,
+			orange 40%
+			yellow 60%
+			green 80%
+			blue 100%
+		);*/
+		height: 500px;
+	}
+
+
+	</style>
+</body>
+</html>

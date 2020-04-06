@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transitions Notes</title>
+</head>
+<body>
+
+	<!-- 
+
+		http://www.standardista.com/web-development-tips/
+
+		Syntax 
+
+		transition-property - select the properties you want to transition or ('all')
+		transition-duration - s or ms
+		transition-timing-function - bezier curve of transition
+		transition-delay - s or ms before the transition starts
+		transition - shorthand for the 4 properties
+	--> 
+
+
+	<!-- Example 1 -->
+	<style>
+		.box{
+			background-color: blue;
+			transition: 1s;
+
+			width:100px;
+			height: 100px;
+		}
+
+		.box:hover {
+			background-color: red;
+		}
+	</style>
+
+	<div class="box"></div>
+
+
+	<!-- Example 2
+		NOTE: becarefull when you   do transions to not change the flow of the page or eles you will repaint the page and this will be slow, use transform: scale() if you want to make things like fonts larger
+	-->
+	<style>
+	.example2{
+		font-size: 16px;
+		/* all ways put transition in pre state */
+		transition: all 2s ease-in 50ms; /*waits 50ms before transition starts*/
+	}
+	.example2:hover {
+		font-size: 34px; /*NOTE: how jolty this is*/
+	}
+	</style>
+	<h2 class="example2">Example 2</h2>
+
+
+	<!-- Example 3 -->
+	<style>
+		.example3{
+			font-size: 16px;
+			transition: all 2s ease-in 50ms; 
+		}
+		.example3:hover {
+			/*NOTE: how smooth this is, font size is still 16px but we a scaling it to 1.4 note layout does not move either*/
+			transform: scale(1.4);
+			transform-origin: 0 0;
+		}
+	</style>
+	<h2 class="example3">Example 3</h2>
+
+
+	<!-- Example 4 -->
+	<style>
+		nav {
+			width:200px;
+			background-color: #f0f0f0;
+			color: #333;
+			margin-top: 24px;
+			border: 1px solid #333;
+		}
+		nav ul li {
+			list-style: none;
+			width:100%;
+		}
+
+		nav > ul > li {
+			display: inline-block;
+			position: relative;
+		}
+
+		nav ul ul {
+			transform: scale(1,0); /*set sub menus to width 100% and height 0%*/
+			transform-origin: top center;
+			transition: transform 0.2s linear 50ms;
+			position: absolute;
+			top:100%;
+			left: 0;
+			padding: 0;
+
+		}
+
+		nav li:hover ul {
+			transform: scale(1,1);
+		}
+	</style>
+	<nav>	
+		<ul>
+			<li>Menu
+				<ul>
+					<li>Option 1</li>
+					<li>Option 2</li>
+					<li>Option 3</li>
+					<li>Option 4</li>
+					<li>Option 5</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<!-- Back face visability 
+		http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp
+	-->
+</body>
+</html>

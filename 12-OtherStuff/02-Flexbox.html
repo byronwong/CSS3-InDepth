@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Other CSS Features Notes</title>
+</head>
+<body>
+<style>
+	 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+	.box {
+		height: 100px;
+		text-align: center;
+		color: #fff;
+		font-size: 32px;
+		font-family: arial, sans-serif;
+	}
+
+	/*Colours for boxes*/
+	.box1 {background-color: #1abc9c;}
+	.box2 {background-color: #3498db;}
+	.box3 {background-color: #9659b6;}
+	.box4 {background-color: #34495e;}
+	.box5 {background-color: #f1c40f;}
+	.box6 {background-color: #e67e22;}
+	.box7 {background-color: #e74c3c;}
+	.box8 {background-color: #bdc3c7;}
+	.box9 {background-color: #2ecc71;}
+	.box10 {background-color: #16a085;}
+
+
+	/* 1 - Flex box basics 
+	======================*/
+	.wrapper {
+		/*1) - apply flex to wrapper*/
+		display:flex;
+	}
+
+	.box {
+		flex:1; /*porportion to each other 1:1:1 etc...*/
+	}
+
+	/*.box3 {
+		flex:2;
+	}
+
+	.box6 {
+		flex:4;
+	}*/
+
+	/* 2 - Rows and Columns 
+	=======================*/
+
+	/* flex-direction: row | row-reverse | column | column-reverse ;*/
+
+	.wrapper {
+		flex-direction:row;
+	}
+
+	.box {
+		/*order:1;*/
+	}
+
+	/* 3 - Reorder - flow 
+	=====================*/
+	.box3 {
+		/*order:0;*/ /*0 default, NOTE: 0 comes before 1*/
+	}
+
+	/* 4 - wraps 
+	============*/
+	.wrapper {
+		width:80%;
+		height: 600px;
+		border:10px solid #333;
+		margin: 0 auto;
+		/*flex-direction:column;
+		flex-wrap:wrap;*/
+	}
+
+	.box {
+		/*min-width:25%;*/ /* Use min to expand */
+		min-height: 200px;
+	}
+
+	/* 5 - flex justify-content 
+	===========================*/
+
+	/* Align the x-axis */
+
+	/*.box {
+		max-width: 50px;
+	}*/
+
+	/* justify-content: flex-start | flex-end | center | space-between | space-around */ 
+	/*.wrapper {
+		justify-content:space-between;
+	}*/
+
+
+	/* 6 - align-items (y)
+	======================*/
+
+	/* Align items deal with the y axis */
+
+	/* align-items: flex-start | flex-end | center | stretch | baseline */
+	/* NOTE: must remove height from items */
+	/*
+	.wrapper {
+		align-items: baseline; 
+	}
+	*/
+
+	/*.box {
+		height: auto;
+	}*/
+
+
+	/* 7 - align-content (y- axis)
+	==============================*/
+
+	/* applies to items(box) when they are wrapping */
+	/* align-content: stretch| center | flex-start | flex-end | space-around | space-between */
+	/*.wrapper {
+		flex-wrap: wrap;
+		align-content: center; 
+
+	}
+
+	.box {
+		min-width: 23%;
+	}*/
+
+	/* 8 - Items 
+	============*/
+	/* as seen before */
+	/*NOTE: you can also have -1 etc */
+	/*.box:nth-child(2) {
+		order:1;
+	}*/
+
+
+	/* 9 - flex-grow 
+	================*/
+	/* 0 = default, 1 = set target ratio to 1 - allows target tha ability to grow to x*/
+	/*.box {
+		flex-grow:1;
+	}*/
+
+
+	/* 10 - flex-shrink 
+	===================*/
+	/* Allows the target to shrink if nessesary*/
+	/*.box {
+		flex-shrink:1;
+	}*/
+
+	
+	/* 11 - flex-basis 
+	==================*/
+	/* Sets a starting point before elements starts to grow or shrink kind of setting the width/ height depending on the direction */
+	/*.box {
+		flex-basis:39px;
+	}*/
+
+
+	/* 12 - flex shorthand - "flex" 
+	===============================*/
+
+
+
+	/* 13 - flex align-self 
+	=======================*/
+	/* allow an item to align by itself independant of the parent */
+	/*.box {
+		align-self: flex-end;
+	}*/
+
+
+	/*
+		Things to check out:
+		https://www.youtube.com/watch?v=wzAWI9h3q18
+
+		https://www.youtube.com/watch?v=GTBaQ2DcGUk
+	*/
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<div class="wrapper">
+	<div class="box box1">1</div>
+	<div class="box box2">2</div>
+	<div class="box box3">3</div>
+	<div class="box box4">4</div>
+	<div class="box box5">5</div>
+	<div class="box box6">6</div>
+	<div class="box box7">7</div>
+	<div class="box box8">8</div>
+	<div class="box box9">9</div>
+	<div class="box box10">10</div>
+</div>
+
+
+
+</body>
+</html>

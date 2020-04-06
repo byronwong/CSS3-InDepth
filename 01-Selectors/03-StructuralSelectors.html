@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors</title>
+</head>
+<body>
+
+	<style>
+
+		/*
+			Structual Selectors
+			========================================
+			1- target elements on the page based on thier relationship to other elements in the DOM
+			2- Upadte dynamically if page updates
+			3- Reduce need for extra markup, classes and IDs
+		*/
+
+		E:nth-child(){}; /*NOTE: you can use formulas e.g. 3n+1, 3n*/
+		E:nth-last-child(){}; /*3n + 1 will work but 1 + 3n will not*/
+		E:nth-of-type(){};
+		E:nth-last-of-type(){};
+		E:first-child(){};
+		E:last-child(){};
+
+		E:first-of-type(){}; /* more performent than last of type*/
+		E:last-of-type(){};
+
+		E:only-child(){}; /*only selects if there is one child*/
+		E:only-of-type(){}; /*selects if only one of its type, if two exist both will NOT be selected*/
+
+		E:root(){};
+		E:empty(){};
+		E:not(:empty){};
+
+
+		/*CASE: depening on the number availble set width*/
+		.box:first-of-type:last-of-type{ /*first from the bottom and first from the top*/
+			width:100%; /* IF only one exists make width 100%;*/
+		} 
+
+		.box:nth-of-type(1):nth-last-of-type(2), 
+		.box:nth-of-type(2):nth-last-of-type(1) { 
+			/*if first of its type and last of its type two there must be two*/
+			width:50%; /*IF two exist make width 50%; */
+		}
+
+		.box:nth-of-type(1):nth-last-of-type(3),
+		.box:nth-of-type(3):nth-last-of-type(1),
+		.box:nth-of-type(2):nth-last-of-type(2) {
+			width: 33.33%;
+		}
+
+		.box:nth-of-type(1):nth-last-of-type(4),
+		.box:nth-of-type(2):nth-last-of-type(3),
+		.box:nth-of-type(3):nth-last-of-type(2)
+		.box:nth-of-type(4):nth-last-of-type(1) {
+			width:25%;
+		}
+
+	</style>
+
+
+</body>
+</html>

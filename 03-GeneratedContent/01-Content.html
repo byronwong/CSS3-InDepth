@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generated Content</title>
+</head>
+<body>
+
+	<!-- Generated content
+	======================= -->
+	<style>
+
+		/* Generated Content 
+		====================*/
+
+		/*Example 1
+		===========*/
+
+		.example1:before {
+			content: "before-content - ";
+			font-weight: bold;
+		}
+
+		.example1:after {
+			content: " - after content";
+			font-weight:bold;
+		}
+
+		/* 
+			so you get 2 free styleable faux elements for every non-empty element
+			so you can't do this on img or input tags
+
+			the only requirement is:
+		*/
+
+			.element:before {
+				content: ''; /* can be blank, but has to be there*/
+				content: "(.pdf)"; /* any text */ 
+				content: "\2603"; /*unicode*/
+				content: "(" attr(href)")"; /* attributes */
+
+				content: counter(name);
+				counter-increment: name; /* counters */
+		}
+	</style>
+
+	<h1>Example of Generated Content</h1>
+	<h3>Try selecting the line bellow</h3>
+	<p class="example1">Hello my name is Panda...</p>
+	<!-- Generate content is not part of hte DOM and cannot be selected by still can be styled like a div aon a page -->
+
+
+	<!-- Values for content
+	======================= -->
+
+	<style type="text/css">
+		/* The content property can have the following types of content:;
+			- none
+			- normal
+			- string
+			- image
+			- counter
+			- open/ close quote
+			- no-open-quote/ no-close-quote
+			- attr(x)
+		*/
+
+
+		body {
+			counter-reset: sections;
+		}
+
+		/* Example 2 - using counters 
+		=============================*/
+		h2.count:before {
+			content: "Part " counter(sections) " : ";
+			counter-increment: sections;
+		}
+	</style>
+
+	<h2 class="count">Hello</h2>
+	<h2 class="count">Hello</h2>
+	<h2 class="count">Hello</h2>
+	<h2 class="count">Hello</h2>
+
+
+	<!-- Example of tooltip
+	======================= -->
+
+	<style>
+
+		a {
+			position: relative;
+			text-decoration: none;
+		}
+
+		a:hover {
+			/*position: relative;*/ /*Stops words going on top of tooltip not sure if it works*/
+		}
+
+		a:before {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-top: 20px solid #ffcb66;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			-webkit-transition: all 0.4s ease;
+			-moz-transition: all 0.4s ease;
+			opacity: 0;
+			left: 30%;
+			bottom: 90%;
+		}
+
+		a:after {
+			content: attr(data-tooltip);
+			position: absolute;
+			bottom: 130%;
+			left: 20%;
+			background: #ffcb66;
+			padding: 5px 15px;
+			color: black;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			white-space: nowrap;
+			opacity: 0;
+			-webkit-transition: all 0.4s ease;
+			-moz-transition: all 0.4s ease;
+		}
+
+		a:hover:after, a:hover:before {
+			opacity: 1;
+		}
+
+		a:hover:before {
+			bottom: 70%;
+		}
+
+		a:hover:after {
+			bottom: 100%;
+		}
+	</style>
+
+	<p>Suddenly bubbles seemed bursting beneath my closed eyes; like vices my hands grasped the shrouds; some invisible, gracious agency preserved me; with a shock I came back to life. And lo! close under our lee, not forty fathoms off, a gigantic Sperm Whale lay rolling in the water like the capsized hull of a frigate, his broad, glossy back, of an Ethiopian hue, glistening in the sun's rays like a mirror. But lazily undulating in the trough of the sea, and ever and anon tranquilly spouting his vapoury jet, the whale looked like a portly burgher smoking his <a href="#" data-tooltip="This is a badass tooltip.">Vestibulum</a> pipe of a warm afternoon. But that pipe, poor whale, was thy last. As if struck by some enchanter's wand, the sleepy ship and every sleeper in it all at once started into wakefulness; and more than a score of voices from all parts of the vessel, simultaneously with the three notes from aloft, shouted forth the accustomed cry, as the great fish slowly and regularly spouted the sparkling brine into the air. "Clear away the boats! Luff!" cried Ahab. And obeying his own order, he dashed the helm down before the helmsman could handle the spokes. The sudden exclamations of the crew must have alarmed the whale; and ere the boats were down, majestically turning, he swam away to the leeward, but with such</p>
+
+	</body>
+	</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Background Images Notes</title>
+</head>
+<body>
+
+	<!-- 
+		Background Images
+		========================
+
+		// Recommended to NOT use background shorthand
+
+		background-image: url(brown.gif), url(blue.gif);
+		// css 3 now supports multiple images
+		// NOTE: css reads it from right to left
+		
+		background-image: none | url() | element-reference | gradient ;
+
+		url()
+		url(data:[file path | file data uri ]);
+		- you can pass image thumbnails via data uri to reduce the number of requests
+		url(sprite.svg);
+		- you can also pass svg
+
+		url(sprite.pnh #xywh=40,0,20,20); - future support
+		FF support background-image: image('ico_sprite.jpg'), 32, 64, 16, 16;
+
+		background-image: element(#SomeID) - future support will allow canvas to be entered
+
+
+		Background Repeat
+		========================
+		background-repeat: repeat | repeat-x | repeat-y | no-repeat | space | round; 
+
+		space - if there is a incomplete image repeat remove it and space out the remaining equally
+		round - remove incomplete and then inlarge remaining images
+
+
+		Background Attachment
+		========================
+		background-attachment: scroll|fixed|local|initial|inherit;
+
+
+		Background Position
+		========================
+		background-position: 50% 50%; // will center the image NOTE % will determine ratios
+		background-position: right 50px bottom 50px;
+
+		background-clip: border-box | padding-box | content-box;
+		background-origin: border-box | padding-box | content-box;
+
+		background-size: auto | contain | cover | length (xpx ypx);
+
+		TIP: try not to use background shorthand
+
+
+		Borders
+		========================
+		When declaring borders it is in the order of:
+		TRouBLe - Top Right Bottom Left
+
+		TIP: when you want to hide a border, it best to use a transparent colour so that if the border is shown the image does not jolt.
+
+
+		circle/ oval : border-radius: 50%;
+		different : border-radius: 10px 30px;
+
+		elliptical : border-radius: 10px / 30px;
+
+		crazy : border-radius: 10px 35px 20px 15px / 30px 35px 5px 5px;
+	-->
+	<style>
+	.box {
+		border-color: red blue yellow black;
+		height: 200px;
+		width: 200px;
+		border-radius: 40% / 5% 50%;
+	}
+	</style>
+
+	<div class="box">This is a div</div>
+
+	<!--
+		Border Image 
+		========================
+
+		border-image: source || slice / width / outset || repeat;
+
+		border must be solid - this is the minimum to be declared to create a border
+
+		
+
+	-->
+
+</body>
+</html>

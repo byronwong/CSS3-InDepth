@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors</title>
+</head>
+<body>
+
+	<style>
+
+	/*Pseudo Elements*/
+
+	/*
+		Defititions:
+		pseudo-classes selects elements that alreaady exist. These are mostly targeting states/ property of an element
+		pseudo-elements create 'faux' elements you can style
+
+		resources:
+		https://css-tricks.com/pseudo-element-roundup/
+
+	*/
+
+
+	::first-line{}
+	::first-letter{}
+
+	::selection{
+		/* styles when use highlights text by click and drag */
+		/* use selectivizr for backward compatibility */
+	} 
+	
+	::before{}
+	::after{}
+
+	/*:: - means we are targeting a pseudo element, in production we will want to just one ":" bacause of IE*/
+
+	/* NOTE:  
+
+		$(selector) returns live node list , but less performant as it has to get the list again on update
+
+		document.querySelectorAll(selector) returns static node list, more performant as list is cached
+
+	*/
+
+	/* There are also many other pre-fixes currently treated as shawdow DOM*/
+
+	::-webkit-progress-bar{}
+	::-webkit-progress-value{}
+	::-webkit-meter-even-less-good-value{}
+	::-webkit-inner-spin-button{}
+	::-webkit--outer-spin-button{}
+	::-webkit-validation-bubble{}
+	::-webkit-arrow-clipper{}
+	::-webkit-arrow{}
+	::-webkit-message{}
+	
+	::-webkit-scrollbar{}
+	::-webkit-scrollbar-button{}
+	::-webkit-scrollbar-thumb{}
+	::-webkit-scrollbar-track{}
+
+	</style>
+
+	<div>
+		<!-- Example Drop Text -->
+
+		<style contenteditable="true">
+		p:first-of-type:first-letter {
+			position: relative;
+			font-size: 64px;
+		}
+
+		p::selection{
+			background-color: red;
+		}
+		</style>
+
+		<p>"I crush the quadrant, the thunder turns the needles, and now the mad sea parts the log-line. But Ahab can mend all. Haul in here, Tahitian; reel up, Manxman. And look ye, let the carpenter make another log, and mend thou the line. See to it."</p>
+
+		<p>"There he goes now; to him nothing's happened; but to me, the skewer seems loosening out of the middle of the world. Haul in, haul in, Tahitian! These lines run whole, and whirling out: come in broken, and dragging slow. Ha, Pip? come to help; eh, Pip?"</p>
+
+		<p>"Pip? whom call ye Pip? Pip jumped from the whale-boat. Pip's missing. Let's see now if ye haven't fished him up here, fisherman. It drags hard; I guess he's holding on. Jerk him, Tahiti! Jerk him off; we haul in no cowards here. Ho! there's his arm just breaking water. A hatchet! a hatchet! cut it off&mdash;we haul in no cowards here. Captain Ahab! sir, sir! here's Pip, trying to get on board again."</p>
+
+	</div>
+
+
+</body>
+</html>

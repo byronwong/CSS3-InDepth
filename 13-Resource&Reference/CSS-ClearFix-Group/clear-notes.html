@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clear-fix aka Group</title>
+	<style type="text/css">
+
+	/*
+		https://css-tricks.com/pseudo-element-roundup/ 
+	*/
+
+
+		.group:before,
+		.group:after {
+		  content:"";
+		  display:table;
+		}
+		.group:after {
+		  clear:both;
+		}
+		.group {
+		  zoom:1; /* For IE 6/7 (trigger hasLayout) */
+		}
+
+	</style>
+</head>
+<body>
+
+</body>
+</html>

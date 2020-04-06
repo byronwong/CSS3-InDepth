@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gradients Notes</title>
+</head>
+<body>
+
+	<!-- 
+
+		Key word properties
+
+		translate()
+		translateX()
+		translateY()
+
+		scale()
+		scaleX()
+		scaleY()
+		
+		skew(x,y)
+		skewX()
+		skewY()
+		
+		matrix() // computer generated
+
+		transform-origin - changes the anchor point for rotation 
+
+		perspective 
+
+		backface
+
+		rotate normal - rotates the item clockwise
+		rotate X - rotates the item on the x axis so at 90deg the image goes invisable similar with rotate Y
+
+		NOTE: to make multiple transformations use a space to declare more
+
+		NOTE: when transforming items, they don't affect the text, they usually end up behing or infront of text
+
+		Note: when you use 3d transform it take the load off the CPU and lets the GPU handle it
+
+		http://www.w3schools.com/css/css3_2dtransforms.asp
+	--> 
+
+	<style>
+		.box{
+			-webkit-transform:
+				rotate(40deg) 
+				translate (0,0) 
+				skew(0,0) 
+				scale(1);
+
+		background-color: red;
+		height: 200px;
+		width:200px;
+		}
+	</style>
+
+	<div class="box"></div>
+
+</body>
+</html>

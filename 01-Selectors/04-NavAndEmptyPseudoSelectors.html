@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors</title>
+</head>
+<body>
+
+	<style>
+
+		/* :not the negation pseudo-class */
+
+		div:not(.excludeMe){
+		/* selects all divs but not the ones with class excludeMe */
+		/* you can put any simple selector, but not relational or decendent selectors */
+		}
+
+		div:empty {
+		/* Selects empty elements that match */
+		}
+
+
+		/*Other Selectors*/
+
+		div:lang{}
+		div:target{
+		/* 
+			When using #target e.g. scrolling to an Id on the page you can select it with target 
+			so for instance if the url = www.capioca.com/#home you can select "div:target" and this will get the element with id="home";
+
+			also not you can use this: div:not(:target) , so get items that are not the target
+
+			for tab menus:
+
+			section:not(:target) > div{ z-index:-2;}; - non active tabs go back
+			section:target >div { z-index:-1;} - bring active tab forward
+		*/
+		} 
+
+
+		/* link and visited are less supported not as it could be use to identify where someone has been*/
+		div:link{}
+		div:visited{}
+
+		div:hover{}
+		div:active{}
+		div:focus{}
+
+
+		:root
+		/* = html tag*/ 
+		/* you may want to declare a global font size if using rem units */
+		/* CSS4 you will be able to declare variable like in sass from the :root */
+
+
+	</style>
+
+
+</body>
+</html>

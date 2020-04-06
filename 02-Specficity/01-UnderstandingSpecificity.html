@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Understanding Specficity</title>
+</head>
+<body>
+
+	<style>
+
+		/*
+			Selectors are grade on thier score the higher the score the priority the selector gets
+
+			ID = 1-0-0
+			Class = 0-1-0
+			Element = 0-0-1
+
+			* = 000
+			element = 1
+			li > ul or li ul = 2
+
+			.myClass = 10
+			*.myClass = 10
+			*[attribute=value] = 10
+			:only-of-type = 10 (these can be UI or structual selectors or pseudo class)
+
+			li.myClass = 11
+			.myClass:not(p) = 11
+
+
+			Some general rules to follow
+			----------------------------
+
+			#myID = 100 ( try and avoid using )
+
+			!important - never in production - only to test if you have the correct selector 
+
+			JS - always toggle classes and not css e.g. toggling display: block, you should use a class instead
+			
+
+		*/
+
+	</style>
+
+</body>
+</html>

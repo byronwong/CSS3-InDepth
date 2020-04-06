@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors</title>
+</head>
+<body>
+
+	<style>
+
+		/* Relational Selectors
+		=======================*/
+
+		ul li {}/* Decendant*/
+
+		ol > li {}/* Child selector*/
+
+		li.myClass + li {} /* adjacent sibling */ /* matches only if the element next to li.myClass is an li */
+
+		li.myClass ~ li {}/* General sibling selector */ /* will match all siblings but not li.myClass itself*/
+
+
+		/*
+			Attribute Selectors - element[attribute]
+			========================================
+
+			Selects elements CONTAINING the name attribute
+		*/
+
+		img[alt]{} /* don't leave a empty src as some browsers will fetch a 404 page */
+
+		form [type]{} /* NOTE: space; check every form and its decendants who have attribute "type"*/
+
+		input[type] {} /*Selects inputs that have a type attribute*/
+
+		input[type="date"] {} /*Selects all inputs that have  type="date" attribute */
+
+
+
+		/* Older Selectors
+		==================*/
+		Element[attr]{} /* returns element with attr irrelevent of value*/
+
+		E[attr=val] {} /* Returns element with attr than equals a specfic value, this may be case sensitive*/
+
+		E[attr |= val] {} /*e.g. p[ lang|= en] -- returns <p lang="en-us">, <p lang="en-uk">*/
+
+		E[attr ~=val]{} /* e.g. title~=more -- returns <a title="something something more" > NOTE: has to be space separated word */
+
+
+		/* CSS3 with regular expressions
+		================================*/
+		E[attr^=val]{} /* Begins with */
+		E[attr$=val]{} /* Ends with */
+		E[attr*=val]{} /* Contains */
+
+		E[title][href]{} /*Can use multiple*/
+
+
+		/* For print
+		============*/
+		@media print {
+			abbr[title]:after {
+				content: "("attr(title)")";
+			}
+
+			a[href^=http]:after {
+				content: "("attr(href)")"
+			}
+		}
+	</style>
+
+</body>
+</html>
